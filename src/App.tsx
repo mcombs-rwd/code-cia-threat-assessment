@@ -1,4 +1,7 @@
 import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
+
 import "./App.css";
 import Loading from "./components/Loading";
 
@@ -7,7 +10,11 @@ function App() {
     <div className="App">
       <div className="canvas-container">
         <Suspense fallback={<Loading />}>
-          <h1>Test</h1>
+          <Canvas>
+            <Html>
+              <h1>Test</h1>
+            </Html>
+          </Canvas>
         </Suspense>
       </div>
     </div>
