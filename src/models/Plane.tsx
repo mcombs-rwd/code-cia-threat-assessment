@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Mesh } from "three";
 // import { useFrame } from "@react-three/fiber";
 
-import angleToRadians from "../utils/angle";
+import calcRadians from "../utils/calcRadians";
 
 import type { ComponentPropsWithoutRef } from "react";
 interface MeshProps extends ComponentPropsWithoutRef<"mesh"> {}
@@ -22,7 +22,7 @@ function Plane({ ...props }: MeshProps) {
       {...props}
       ref={meshRef}
       receiveShadow
-      rotation={[-angleToRadians(90), 0, 0]}
+      rotation={[-calcRadians(90), 0, 0]}
       scale={isActive ? 1.25 : 1}
       onClick={() => setActive(!isActive)}
       onPointerOver={() => setHovered(true)}
