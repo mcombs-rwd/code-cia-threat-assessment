@@ -7,7 +7,7 @@ import { Mesh } from "three";
 type Ref = Mesh;
 interface MeshProps extends ComponentPropsWithRef<"mesh"> {}
 
-const Sphere = forwardRef<Ref>(({ ...props }: MeshProps, fRef) => {
+const Sphere = forwardRef<Ref>(({ ...props }: MeshProps, ref) => {
   // This reference gives us direct access to the THREE.Mesh object
   // const meshRef = useRef<Mesh>(null!);
   // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -21,7 +21,7 @@ const Sphere = forwardRef<Ref>(({ ...props }: MeshProps, fRef) => {
   return (
     <mesh
       {...props}
-      ref={fRef}
+      ref={ref}
       castShadow
       receiveShadow
       scale={isActive ? 1.25 : 1}
