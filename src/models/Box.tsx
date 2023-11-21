@@ -23,7 +23,7 @@ function Box({ ...props }: MeshProps) {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <boxGeometry args={[1, 1.5, 2.5]} /> {/* width, height, depth */}
+      <boxGeometry args={[1, 1.5, 2.5]} />
       <meshStandardMaterial color={isHovered ? "hotpink" : "orange"} />
     </mesh>
   );
