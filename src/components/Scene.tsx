@@ -10,8 +10,8 @@ import Sphere from "../models/Sphere";
 function Scene() {
   const sphereRef = useRef(null!);
   useEffect(() => {
+    // eslint-disable-next-line no-extra-boolean-cast
     if (!!sphereRef.current) {
-      console.log(sphereRef.current);
       console.log(sphereRef.current);
       const timeline = gsap.timeline({ paused: true });
       timeline.to(sphereRef.current.position, {
