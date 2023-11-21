@@ -22,8 +22,8 @@ const Sphere = forwardRef<Ref>(({ ...props }: MeshProps, fRef) => {
     <mesh
       {...props}
       ref={fRef}
-      receiveShadow
       castShadow
+      receiveShadow
       scale={isActive ? 1.25 : 1}
       onClick={() => setActive(!isActive)}
       onPointerOver={() => setHovered(true)}

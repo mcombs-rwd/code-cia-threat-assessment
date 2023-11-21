@@ -11,19 +11,19 @@ function Scene() {
       <ambientLight color={"white"} intensity={0.3} />
       <spotLight
         color={"white"}
-        intensity={5}
-        distance={6.0}
-        position={[-1, 0.5, 1.0]}
+        intensity={15}
+        distance={15.0}
+        position={[-4, 0.5, 1.0]}
         penumbra={0.0}
         castShadow
       />
-      <Sphere position={[2.0, 1, 0]} />
-      <Box position={[3, 0, 2]} />
+      <Sphere position={[7.0, 1.0, 2]} />
+      <Box position={[2, 0, 2]} />
       <Plane position={[0.0, -1.0, 0.0]} />
       <Environment background>
         <mesh>
           <sphereGeometry args={[50, 32, 32]} />
-          <meshBasicMaterial color="#321e1e" side={THREE.BackSide} />
+          <meshBasicMaterial color="#3b3378" side={THREE.BackSide} />
         </mesh>
       </Environment>
     </>

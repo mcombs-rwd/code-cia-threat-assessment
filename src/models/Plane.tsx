@@ -15,7 +15,8 @@ function Plane({ ...props }: MeshProps) {
   const [isActive, setActive] = useState(false);
   // Subscribe this component to the render-loop, rotate the mesh every frame
   // useFrame((_state, delta) => (meshRef.current.rotation.x += delta));
-  // Return the view, these are regular Threejs elements expressed in JSX
+
+  // planeGeometry is width, height (then we rotate it from a wall to a floor)
   return (
     <mesh
       {...props}
@@ -27,7 +28,7 @@ function Plane({ ...props }: MeshProps) {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <planeGeometry args={[10, 10]} />
+      <planeGeometry args={[15, 7]} />
       <meshStandardMaterial color={isHovered ? "white" : "silver"} />
     </mesh>
   );

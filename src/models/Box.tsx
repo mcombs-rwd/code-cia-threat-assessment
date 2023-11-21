@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { Mesh } from "three";
 import { useFrame } from "@react-three/fiber";
+
 import type { ComponentPropsWithoutRef } from "react";
-interface MeshProps extends ComponentPropsWithoutRef<"mesh"> {
-}
+interface MeshProps extends ComponentPropsWithoutRef<"mesh"> {}
 
 function Box({ ...props }: MeshProps) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -13,7 +13,8 @@ function Box({ ...props }: MeshProps) {
   const [isActive, setActive] = useState(false);
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((_state, delta) => (meshRef.current.rotation.x += delta));
-  // Return the view, these are regular Threejs elements expressed in JSX
+
+  // boxGeometry is width, height, depth
   return (
     <mesh
       {...props}
