@@ -28,7 +28,7 @@ function Plane({ ...props }: MeshProps) {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <planeGeometry args={[15, 7]} />
+      <planeGeometry args={[17, 7]} />
       <meshStandardMaterial color={isHovered ? "white" : "silver"} />
     </mesh>
   );
