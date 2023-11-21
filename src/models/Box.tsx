@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Mesh } from "three";
+import { useFrame } from "@react-three/fiber";
 import type { ComponentPropsWithoutRef } from "react";
 interface MeshProps extends ComponentPropsWithoutRef<"mesh"> {
 }
-// import { useFrame } from "@react-three/fiber";
 
 function Box({ ...props }: MeshProps) {
   // This reference gives us direct access to the THREE.Mesh object
-  // const meshRef = useRef();
+  const meshRef = useRef<Mesh>(null!);
   // Hold state for hovered and clicked events
   const [isHovered, setHovered] = useState(false);
   const [isActive, setActive] = useState(false);
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  // useFrame((state, delta) => (meshRef.current.rotation.x += delta));
+  useFrame((_state, delta) => (meshRef.current.rotation.x += delta));
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <mesh
       {...props}
+      ref={meshRef}
       castShadow
       receiveShadow
       scale={isActive ? 1.5 : 1}
