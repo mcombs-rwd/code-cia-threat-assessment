@@ -4,6 +4,7 @@ import { Html } from "@react-three/drei";
 
 import "./App.css";
 import Loading from "./components/Loading";
+import Scene from "./components/Scene";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Html>
               <h1>Test</h1>
             </Html>
+            <Scene />
           </Canvas>
         </Suspense>
       </div>
