@@ -3,6 +3,7 @@ import * as THREE from "three";
 
 import Box from "../models/Box";
 import Plane from "../models/Plane";
+import Sphere from "../models/Sphere";
 
 function Scene() {
   return (
@@ -16,6 +17,7 @@ function Scene() {
         penumbra={0.0}
         castShadow
       />
+      <Sphere position={[2.0, 1, 0]} />
       <Box position={[3, 0, 2]} />
       <Plane position={[0.0, -1.0, 0.0]} />
       <Environment background>
